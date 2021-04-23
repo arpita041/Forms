@@ -1,102 +1,25 @@
-<!--<div class="container">
-  <h2>Registration From</h2>
-  <form [formGroup] = "registration" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label>User Name:</label>
-      <input [class.is-invalid]="userName!.invalid
-      && userName!.touched" formControlName ="userName" type="text" class="form-control">
-     <small [class.d-none]="registration.get('email')!.valid || 
-      registration.get('email')!.untouched" class="text-danger">Name is required</small>      <div *ngIf="userName!.invalid &&  registration.get('userName')!.touched">
-        <small *ngIf="registration.get('userName')!.errors?.required" class="text-danger">name is required</small>
-<small *ngIf="registration.get('userName')!.errors?.minlength" class="text-danger">Minimum length should be 3</small>
-      </div>
-    </div>
-    <div class="form-group">
-      <label>Password:</label>
-      <input formControlName="password" type="password" class="form-control">
-    </div>
-    <div class="form-group">
-      <label>Repeat Password:</label>
-      <input [class.is-invalid]="registration.errors?.wrong"  formControlName="confirmPassword"
-       type="password" class="form-control">
-    </div> 
-    <div class="form-group">
-      <label>Email:</label>
-      <button (click)="addAlternateEmail()" class= "btn btn-dark m-2">Add alternate email</button>
-      <input [class.is-invalid]="registration.get('email').invalid && registration.get('email').touched"  formControlName="email"
-       type="email" class="form-control">
-    </div> 
-    <!-- <small [class.d-none]="registration.get('email')!.valid || 
-    registration.get('email')!.untouched" class="text-danger">email is required</small> 
-    <div *ngIf="registration.get('email')!.invalid &&  registration.get('email')!.touched">
-      <small *ngIf="registration.get('email')!.errors?.required" class="text-danger">email is required</small>
-<small *ngIf="registration.get('email')!.errors?.pattern" class="text-danger">Please enter a valid email</small>
-    </div>
-    <div formArrayName="alternateEmails" *ngFor="let email of alternateEmails.controls; let i=index">
-      <input type="text" class="form-control my-1" [formControlName]="i">
-    </div>
-    <br>
-  {{registration.value | json }}
-  <!--section 2-
-  <div formGroupName ="add">
- <div class="form-group">
-<label>City:</label>
-<input formControlName="city" type="text" class="form-control">
- </div>
- <div class="form-group">
-  <label>State:</label>
-  <input formControlName="state" type="text" class="form-control">
-   </div>
-   <div class="form-group">
-    <label>Code:</label>
-    <input formControlName="code" type="text" class="form-control">
-     </div>
-  </div> 
-  <div class="mb-3">
-    <label>Time preference</label>
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="timePreference" value="morning" formControlName="timePreference">
-      <label class="form-check-label">Morning (9AM - 12PM)</label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="timePreference" value="evening" formControlName="timePreference">
-      <label class="form-check-label">Evening (5PM - 8PM)</label>
-    </div>
-  </div>
-  <div class="form-group">
-    <label>Email:</label>
-    <input  formControlName="em" type="email" class="form-control">
-    <small class="text-danger" [class.d-none]="registration.get('em').valid || registration.get('em').untouched">Email is required</small>
-  </div> 
-  <div>
-    Get further details:
-    <input type="checkbox" formControlName="subscribe">
-  </div>
-  <!-- <button (click)="loadData()" class ="btn btn-success m-2 ">Get Value</button> 
-        <button [disabled]="!registration.valid" class="btn btn-dark m-3 btn-block">Submit</button>
-</form>
-</div>
--->
 <div class= "container mid">
-<h1 class ="display-4 text-center">Virtual WorkShop Registration Form</h1>
+  <div class="cl">
+<h1 class =" text-center">Virtual WorkShop Registration Form</h1>
+</div>
 <br>
-<div class="m-10">
+ <div class="bor">
   <div class="myClass">
   <p>join the 3 day web development Virtual  WorkShop and become a hirable freelancer.</p>
 <p> Particiption Fee : $200</p>
 <p>Limited slots!</p>
 </div>
-<div clas="myClass2">
+<div class="myClass2">
 <p>Virtual WorkShop Schedule</p>
-<pre> May 1-3      9:00 am to 1:00 pm</pre>
-<pre> May 1-3      9:00 am to 1:00 pm</pre>
-<pre> May 1-3      9:00 am to 1:00 pm</pre>
+<pre> May 1-3        9:00 am to 1:00 pm</pre>
+<pre> May 1-3        9:00 am to 1:00 pm</pre>
+<pre> May 1-3        9:00 am to 1:00 pm</pre>
 </div>
 </div>
 <div class="mt-5">
   <form [formGroup] = "registration" (ngSubmit)="onSubmit()">
     <div class="form-group">
-  <strong>Please rate your web development or programming knowledge:</strong>
+  <strong class="marg">Please rate your web development or programming knowledge:</strong>
   <div class="form-check">
     <input class="form-check-input" type="radio" name="rating" value="onIdea" formControlName="rating">
     <label class="form-check-label">I dont have any idea at all</label>
@@ -113,94 +36,193 @@
     <input class="form-check-input" type="radio" name="timePreference" value="workExperience" formControlName="rating">
     <label class="form-check-label">I have a web development related work Experience</label>
   </div>
-
+</div>
 <div class="mt-5">
 <strong>I'd Like to learn about the following:</strong>
+<div>
+<div class="row">
+  <div class="col">
 <div class="form-check">
   <input class="form-check-input" type="radio" name="subject" value="html" formControlName="subject">
   <label class="form-check-label">HTML</label>
 </div> 
+</div>
+<div class="col">
 <div class="form-check">
   <input class="form-check-input" type="radio" name="subject" value="css" formControlName="subject">
   <label class="form-check-label">CSS</label>
+  </div>
 </div>
+</div>
+</div>
+<div class="row">
+  <div class="col">
 <div class="form-check">
   <input class="form-check-input" type="radio" name="subject" value="javascript" formControlName="subject">
   <label class="form-check-label">javascript</label>
+</div> 
+</div>
+<div class="col">
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="subject" value="php" formControlName="subject">
+    <label class="form-check-label">PHP</label>
+  </div> 
+</div>
+</div> 
+<div class="row">
+  <div class="col">
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="subject" value="DataBase" formControlName="subject">
+  <label class="form-check-label">Database</label>
+</div> 
+</div>
+<div class="col">
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="subject" value="pyhon" formControlName="subject">
+    <label class="form-check-label">Python</label>
+  </div> 
+</div>
+</div>
+<div class="row">
+  <div class="col">
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="subject" value="devOps" formControlName="subject">
+  <label class="form-check-label">DevOps</label>
+</div> 
+</div>
+<div class="col">
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="subject" value="WebSecurity" formControlName="subject">
+    <label class="form-check-label">WebSecurity</label>
+  </div> 
+</div>
 </div>  
+<div class="row">
+  <div class="col">
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="subject" value="frontEnd" formControlName="subject">
+  <label class="form-check-label">Front End development</label>
+</div> 
+</div>
+<div class="col">
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="subject" value="backend" formControlName="subject">
+    <label class="form-check-label">Back End development</label>
+  </div> 
+</div>
+</div> 
+<div class="row">
+  <div class="col">
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="subject" value="other" formControlName="subject">
+  <label class="form-check-label">other-</label>
+  <input type="text">
+</div> 
+</div>
+</div>
 </div>
 <hr>
-<h1 class ="text-center display-4">Participant Information</h1>
-<div class="form-group">
-  {{registration.value | json}}
-  <br>
-<label>Name:</label>
-  <label>Fname:</label>
-  <input type="text" [class.is-invalid]="registration.get('fname')!.invalid &&registration.get('fname')!.touched" 
-  formControlName="fname" class="form-control">
-<small class="text-danger" [class.d-none]="registration.get('fname')!.valid && registration.get('fname')!.untouched">name is required</small>
-  </div>
-  <label>Lname:</label>
-  <input type="text" [class.is-invalid]="registration.get('lname')!.invalid &&registration.get('lname')!.touched" 
-  formControlName="lname" class="form-control">
-<small class="text-danger" [class.d-none]="registration.get('lname')!.valid && registration.get('lname')!.untouched">name is required</small>
+<div class="cl">
+<h1 class ="text-center">Participant Information</h1>
 </div>
 <div class="form-group">
-<label>Email:</label>
-  <input [class.is-invalid]="registration.get('email').invalid && registration.get('email').touched"  formControlName="email"
+  <br>
+  <label class="m-2">Name:</label>
+<div class="row">
+  <div class="col">
+    <input type="text" [class.is-invalid]="registration.get('fname')!.invalid &&registration.get('fname')!.touched" 
+    formControlName="fname" class="form-control" placeholder="First name">
+    <small *ngIf="registration.get('fname')!.errors?.required &&
+    registration.get('fname')!.touched" class="text-danger">This Field is required</small>
+  </div>
+  <div class="col">
+    <input type="text" [class.is-invalid]="registration.get('lname')!.invalid &&registration.get('lname')!.touched" 
+    formControlName="lname"  class="form-control" placeholder="Last name">
+    <small *ngIf="registration.get('lname')!.errors?.required 
+    &&
+    registration.get('lname')!.touched" class="text-danger">This Field is required</small>
+  </div>
+</div>
+</div>
+<div class="form-group">
+<label class="m-2">Email:</label>
+  <input [class.is-invalid]="registration.get('email').invalid && registration.get('email').touched" 
+  placeholder="email" formControlName="email"
    type="email" class="form-control">
    <div *ngIf="registration.get('email')!.invalid &&  registration.get('email')!.touched">
     <small *ngIf="registration.get('email')!.errors?.required" class="text-danger">email is required</small>
+    <small *ngIf="registration.get('email')!.errors?.pattern" class="text-danger">Please enter a valid email</small>
   </div>
 
      <div class="form-group">
-      <label>Occupation:</label>
+      <label class='m-2'>Occupation:</label>
       <input [class.is-invalid]="registration.get('occupation').invalid && registration.get('occupation').touched" 
-       formControlName="occupation"
+       formControlName="occupation" placeholder="Occupation"
        type="text" class="form-control">
        <div *ngIf="registration.get('occupation')!.invalid &&  registration.get('occupation')!.touched">
         <small *ngIf="registration.get('occupation')!.errors?.required" class="text-danger">This field is required</small>
 </div>
 </div>
 <div class="form-group">
-  <label>Company Name:</label>
+  <label class="m-2">Company Name:</label>
   <input [class.is-invalid]="registration.get('company').invalid && registration.get('company').touched" 
-   formControlName="company"
+   formControlName="company" placeholder="company name"
    type="text" class="form-control">
    <div *ngIf="registration.get('company')!.invalid &&  registration.get('company')!.touched">
     <small *ngIf="registration.get('company')!.errors?.required" class="text-danger">This field is required</small>
 </div>
 </div>
 <div class="form-group">
-  <label>Job title:</label>
+  <label class="m-2">Job title:</label>
   <input [class.is-invalid]="registration.get('job').invalid && registration.get('job').touched" 
-   formControlName="job"
+   formControlName="job"   placeholder="job title"
    type="text" class="form-control">
    <div *ngIf="registration.get('job')!.invalid &&  registration.get('job')!.touched">
     <small *ngIf="registration.get('job')!.errors?.required" class="text-danger">This field is required</small>
 </div>
 </div>
-<div formGroupName ="add">
-  <h2>Address:</h2>
+<div>
+  <hr>
+  <h4>Address:</h4>
   <div class="form-group">
-    <label>Street Address:</label>
-    <input formControlName="street" type="text" class="form-control">
+    <label class="m-2">Street Address line 1:</label>
+    <input formControlName="street" type="text" class="form-control" placeholder="Address line 1">
      </div>
+     <div class="form-group">
+      <label class="m-2">Street Address line 2:</label>
+      <input formControlName="street" type="text" class="form-control" placeholder="Address line 2">
+       </div>
   <div class="form-group">
- <label>City:</label>
- <input formControlName="city" type="text" class="form-control">
-  </div>
-  <div class="form-group">
-   <label>State:</label>
-   <input formControlName="state" type="text" class="form-control">
-    </div>
-    <div class="form-group">
-     <label>Code:</label>
-     <input formControlName="code" type="text" class="form-control">
+    <div class="row">
+      <div class="col"> <label class="m-2">City:</label>
+ <input formControlName="city" type="text" class="form-control" formControlName="city" placeholder="city">
+ <div *ngIf="registration.get('city')!.invalid &&  registration.get('city')!.touched">
+  <small *ngIf="registration.get('city')!.errors?.required" class="text-danger">This field is required</small>
+ </div>
+ </div>
+ <div class="col">
+   <label class="m-2">State:</label>
+   <input formControlName="state" type="text" class="form-control" formControlName="state" placeholder="State">
+   <div *ngIf="registration.get('state')!.invalid &&  registration.get('state')!.touched">
+    <small *ngIf="registration.get('state')!.errors?.required" class="text-danger">This field is required</small>
+   </div>
+   </div>
+   <div class="col">
+     <label class="m-2">Code:</label>
+     <input formControlName="code" type="text" class="form-control" formControlName="code" placeholder="code">
+     <div *ngIf="registration.get('code')!.invalid &&  registration.get('code')!.touched">
+      <small *ngIf="registration.get('code')!.errors?.required" class="text-danger">This field is required</small>
+     </div>
+     </div>
       </div>
    </div>
    <div>
-  <h1 class="display-4 text-center">Payment Information</h1> 
+   </div>
+   <hr>
+   <div>
+   <div class="cl">
+  <h1 class="text-center">Payment Information</h1> 
+  </div>
    <strong>WorkShop Dates:</strong>
    <br>
    <input class="m-2" type="radio" id="male" name="workshopDate" formControlName="workshopDate" value="mayStart">
@@ -209,21 +231,89 @@
 <label>June 1-3</label><br>
 <input class="m-2" type="radio" name="workshopDate" formControlName="workshopDate" value="julyStart">
 <label>July 1-3</label><br>
-<input class="m-2" type="radio" name="workshopDate" formControlName="workshopDate"  value="mayEnd">
-<label>May 15-18</label><br>
 <input class="m-2" type="radio" name="workshopDate" formControlName="workshopDate"  value="other">
 <label>Other</label>
-</div>
-<div class= "m-3">
+<div class= "mt-2">
   <strong>Virtual WorkShop Payment:</strong>
-<input type="radio" formControlName="fee" value="200.00" class="form-check">
+  <br>
+<input type="radio" formControlName="fee" value="200.00" class="m-2">
+<label for="fee">$200</label>
 </div>
-
-
+<div>
+  <strong>Payment Methods:</strong>
+  <br>
+    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Preference:</label>
+    <br>
+    <select class="btn btn-light dropdown-toggle wid">
+      <option selected>Choose...</option>
+      <option value="1">Debit Card</option>
+      <option value="2">Credit Card</option>
+      <option value="3">EMI</option>
+    </select>
+  
 </div>
-<button [disabled]="!registration.valid" class="btn btn-dark m-3 btn-block">Submit</button>
+<div>
+  <strong>Add a comment:</strong>
+  <br>
+  <textarea id="subject" name="subject" placeholder="Write something.."></textarea>
+</div>
+<div>
+  <strong>
+    How did you learn about this virtual training program?
+  </strong>
+  <br>
+ <div class="row">
+   <div class="col">
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="way" value="Facebook" formControlName="knowledge">
+      <label class="form-check-label">Facebook</label>
+    </div>   
+   </div>
+   <div class="col">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" name="way" value="Twitter" formControlName="knowledge">
+    <label class="form-check-label">Twitter</label>
+    </div>
+   </div>
+ </div>
+ <div class="row">
+  <div class="col">
+   <div class="form-check">
+     <input class="form-check-input" type="radio" name="way" value="Youtube" formControlName="knowledge">
+     <label class="form-check-label">Youtube</label>
+   </div>   
+  </div>
+  <div class="col">
+   <div class="form-check">
+   <input class="form-check-input" type="radio" name="way" value="Online adds" formControlName="knowledge">
+   <label class="form-check-label">Online adds</label>
+   </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+   <div class="form-check">
+     <input class="form-check-input" type="radio" name="way" value="referral" formControlName="knowledge">
+     <label class="form-check-label">Referral</label>
+   </div>   
+  </div>
+  <div class="col">
+   <div class="form-check">
+   <input class="form-check-input" type="radio" name="way" value="other" formControlName="knowledge">
+   <label class="form-check-label">Other-</label>
+   <input type="text">
+   </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<button [disabled]="!registration.valid" class=" mybtn btn btn-dark mt-3 btn-block">Submit</button>
 </form>
 <hr>
 <br>
 <br>
+</div>
 </div>

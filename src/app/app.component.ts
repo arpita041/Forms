@@ -20,21 +20,19 @@ export class AppComponent implements OnInit{
  {
    this.registration = this.fb.group({
      rating:['', Validators.required],
-     fname:['Arpita' ,Validators.required],
-     lname:['Maurya' ,Validators.required],
-     email:['' ,Validators.required],
+     fname:['' ,Validators.required],
+     lname:['' ,Validators.required],
+     email:['' ,[Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
      subject:['', Validators.required],
      occupation:['',Validators.required],
      company: ['', Validators.required],
      job:['', Validators.required],
      fee:['' , Validators.required],
      workshopDate:['juneStart', Validators.required],
-     add : this.fb.group({
        street:['' , Validators.required],
        city:['', Validators.required],
        state:['' , Validators.required],
        code:['' , Validators.required]
-     })
    })
  }
  onSubmit() {
