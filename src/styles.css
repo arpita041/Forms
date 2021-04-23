@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+.myClass
+{
+    width: 40%;
+    float: left;
+}
+.myClass2
+{
+    width: 40%;
+    float: right;
+    margin-left:20px;
+}
+.mid
+{
+    margin-left: 100px;
+}
